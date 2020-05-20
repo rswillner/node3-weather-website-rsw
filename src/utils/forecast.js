@@ -13,7 +13,8 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const temperature = body.current.temperature;   //removed response
             const precip = body.current.precip;   //removed response
-            callback(undefined, (body.current.weather_descriptions[0] + '. It is currently ' + temperature + ' degress out. There is a ' + precip + '% chance of rain.'));
+            callback(undefined, (body.current.weather_descriptions[0] + '. It is currently ' + temperature + ' degress out. There is a ' + precip + '% chance of rain.' +
+                ' The humidity today is ' + body.current.humidity + '%.'));
         }
     });
 };
